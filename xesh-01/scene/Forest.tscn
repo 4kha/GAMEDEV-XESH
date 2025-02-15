@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://clnrdlybsm23a"]
+[gd_scene load_steps=17 format=3 uid="uid://clnrdlybsm23a"]
 
+[ext_resource type="Script" path="res://scene/forest.gd" id="1_3resi"]
 [ext_resource type="Texture2D" uid="uid://cpvxivbc4kg5f" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="1_qanpk"]
 [ext_resource type="Texture2D" uid="uid://cteiblkq1p7ny" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0011_0.png" id="2_vxlym"]
 [ext_resource type="Texture2D" uid="uid://nwe7hy486k4" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0009_2.png" id="3_v738g"]
@@ -10,31 +11,51 @@
 [ext_resource type="Texture2D" uid="uid://cx7roxs18ark2" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="8_2ruv4"]
 [ext_resource type="Texture2D" uid="uid://jggy8eelp71j" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="9_ixn31"]
 [ext_resource type="Texture2D" uid="uid://dur5r6lnbl5a" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0002_7.png" id="10_726wo"]
+[ext_resource type="PackedScene" uid="uid://ctwg0lpnerpvl" path="res://Harpy.tscn" id="11_yv2qx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tapc3"]
+size = Vector2(9020, 649)
+
+[sub_resource type="Gradient" id="Gradient_uba4e"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_me7yu"]
+gradient = SubResource("Gradient_uba4e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2aj7"]
-size = Vector2(944, 20)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hycbx"]
-rough = true
-bounce = 0.04
-
-[sub_resource type="Gradient" id="Gradient_s0ghq"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcpi4"]
-gradient = SubResource("Gradient_s0ghq")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s3m1"]
+size = Vector2(6069, 20)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(466, 252.5)
+script = ExtResource("1_3resi")
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="CameraLimit" type="Area2D" parent="Environment"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/CameraLimit"]
+position = Vector2(4047, 69)
+shape = SubResource("RectangleShape2D_tapc3")
+
+[node name="Camera2D" type="Camera2D" parent="Environment"]
+offset = Vector2(120, -120)
+limit_left = -120
+limit_top = 120
+limit_bottom = 230
+
+[node name="Harpy" parent="Environment" instance=ExtResource("11_yv2qx")]
+position = Vector2(-369.917, 250.857)
+scale = Vector2(0.5, 0.5)
+
+[node name="Start" type="Node2D" parent="Environment"]
+position = Vector2(-373.208, 277.662)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Start"]
+texture = SubResource("GradientTexture2D_me7yu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(10, 70)
-motion_offset = Vector2(3, 0)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Layer00101" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
@@ -51,7 +72,6 @@ texture = ExtResource("3_v738g")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(10, 70)
-motion_offset = Vector2(2, 0)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Layer00064" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer4"]
@@ -70,7 +90,6 @@ texture = ExtResource("7_0bc58")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(466, 252.5)
-motion_offset = Vector2(1, 0)
 motion_mirroring = Vector2(928, 0)
 
 [node name="Layer00055" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
@@ -101,23 +120,11 @@ motion_mirroring = Vector2(928, 0)
 [node name="Front" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("6_rhnhv")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/ParallaxBackground/ParallaxLayer/Front"]
-
-[node name="GroundCollisionShape" type="CollisionShape2D" parent="Environment/ParallaxBackground/ParallaxLayer/Front/StaticBody2D"]
-position = Vector2(1, 340)
-shape = SubResource("RectangleShape2D_d2aj7")
-
 [node name="Layer00010" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("5_fb57c")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Environment/ParallaxBackground"]
-position = Vector2(81.0203, 565.784)
-physics_material_override = SubResource("PhysicsMaterial_hycbx")
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/ParallaxBackground/RigidBody2D"]
-position = Vector2(0.479743, -0.283759)
-scale = Vector2(0.0742188, 19)
-texture = SubResource("GradientTexture1D_gcpi4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/ParallaxBackground/RigidBody2D"]
-shape = SubResource("RectangleShape2D_1s3m1")
+[node name="GroundCollisionShape" type="CollisionShape2D" parent="Environment/StaticBody2D"]
+position = Vector2(2563.5, 340)
+shape = SubResource("RectangleShape2D_d2aj7")
