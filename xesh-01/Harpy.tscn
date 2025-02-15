@@ -1,6 +1,11 @@
-[gd_scene load_steps=132 format=3 uid="uid://ctwg0lpnerpvl"]
+[gd_scene load_steps=134 format=3 uid="uid://ctwg0lpnerpvl"]
 
 [ext_resource type="Texture2D" uid="uid://dum4yyf5itnxc" path="res://art/harpy.png" id="1_6ms87"]
+[ext_resource type="Script" path="res://harpy.gd" id="1_eas4b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2881u"]
+radius = 101.0
+height = 250.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oauxi"]
 atlas = ExtResource("1_6ms87")
@@ -933,9 +938,13 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_eas4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 4)
+shape = SubResource("CapsuleShape2D_2881u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ad1it")
-animation = &"Idle"
-frame_progress = 0.81474
+animation = &"Flap"
