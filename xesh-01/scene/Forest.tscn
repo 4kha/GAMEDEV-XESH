@@ -22,13 +22,17 @@ size = Vector2(9020, 649)
 gradient = SubResource("Gradient_uba4e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2aj7"]
-size = Vector2(6069, 20)
+size = Vector2(6070, 51.5)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(466, 252.5)
 script = ExtResource("1_3resi")
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="Harpy" parent="Environment" instance=ExtResource("11_yv2qx")]
+position = Vector2(-369.917, 214.857)
+scale = Vector2(0.5, 0.5)
 
 [node name="CameraLimit" type="Area2D" parent="Environment"]
 
@@ -41,10 +45,6 @@ offset = Vector2(120, -120)
 limit_left = -120
 limit_top = 120
 limit_bottom = 230
-
-[node name="Harpy" parent="Environment" instance=ExtResource("11_yv2qx")]
-position = Vector2(-369.917, 250.857)
-scale = Vector2(0.5, 0.5)
 
 [node name="Start" type="Node2D" parent="Environment"]
 position = Vector2(-373.208, 277.662)
@@ -126,5 +126,5 @@ texture = ExtResource("5_fb57c")
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment"]
 
 [node name="GroundCollisionShape" type="CollisionShape2D" parent="Environment/StaticBody2D"]
-position = Vector2(2563.5, 340)
+position = Vector2(2563, 355.75)
 shape = SubResource("RectangleShape2D_d2aj7")
