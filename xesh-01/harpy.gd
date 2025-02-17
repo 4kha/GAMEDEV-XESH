@@ -11,7 +11,7 @@ func _ready():
 	position = get_parent().get_node("Start").position
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move.x = 0
 	move.y += gravity 
 	if move.y > MAXFALLSPEED:
@@ -27,10 +27,10 @@ func _physics_process(delta):
 	position += move
 	move_and_slide()
 
-	if move.x != 0:
+	if (move.y < 0) || !is_on_floor():
+		$AnimatedSprite2D.animation = "Fly"
+	elif move.x != 0:
 		$AnimatedSprite2D.animation = "Walk"
 		$AnimatedSprite2D.flip_h = move.x < 0
 	else:
 		$AnimatedSprite2D.animation = "Idle"
-	if (move.y < 0) || !is_on_floor():
-		$AnimatedSprite2D.animation = "Fly"

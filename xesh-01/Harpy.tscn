@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dum4yyf5itnxc" path="res://art/harpy.png" id="1_6ms87"]
 [ext_resource type="Script" path="res://harpy.gd" id="1_eas4b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oauxi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6hky"]
 atlas = ExtResource("1_6ms87")
-region = Rect2(1, 3638, 340, 265)
+region = Rect2(2, 3639, 338, 263)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_561pf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8m3v"]
 atlas = ExtResource("1_6ms87")
-region = Rect2(342, 3638, 340, 265)
+region = Rect2(343, 3639, 338, 263)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbfb5"]
 atlas = ExtResource("1_6ms87")
@@ -523,10 +523,10 @@ region = Rect2(3992, 2761, 207, 242)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oauxi")
+"texture": SubResource("AtlasTexture_a6hky")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_561pf")
+"texture": SubResource("AtlasTexture_i8m3v")
 }],
 "loop": true,
 "name": &"Damage",
@@ -943,7 +943,7 @@ script = ExtResource("1_eas4b")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -9)
 sprite_frames = SubResource("SpriteFrames_ad1it")
-animation = &"Damage"
+animation = &"Fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
