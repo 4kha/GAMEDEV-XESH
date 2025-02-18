@@ -16,5 +16,6 @@ func _process(delta):
 func _on_timer_timeout():
 	free = 1
 
-func sprite(value):
+func sprite(value, flip_h):
 	$AnimatedSprite2D.frame = value
+	$AnimatedSprite2D.flip_h = flip_h

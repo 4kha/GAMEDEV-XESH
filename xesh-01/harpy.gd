@@ -52,7 +52,7 @@ func _physics_process(_delta):
 		Sfx.position = position
 		Sfx.scale = scale
 		Sfx.z_index = -1
-		Sfx.sprite($AnimatedSprite2D.frame)
+		Sfx.sprite($AnimatedSprite2D.frame, $AnimatedSprite2D.flip_h)
 		get_parent().add_child(Sfx)
 
 	if Input.is_action_just_pressed("dash") && dash != 0 && dashing == 0:
