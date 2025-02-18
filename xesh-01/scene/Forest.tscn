@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clnrdlybsm23a"]
+[gd_scene load_steps=15 format=3 uid="uid://clnrdlybsm23a"]
 
 [ext_resource type="Script" path="res://scene/forest.gd" id="1_3resi"]
 [ext_resource type="Texture2D" uid="uid://cpvxivbc4kg5f" path="res://art/Environment/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="1_qanpk"]
@@ -15,11 +15,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tapc3"]
 size = Vector2(9020, 649)
-
-[sub_resource type="Gradient" id="Gradient_uba4e"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_me7yu"]
-gradient = SubResource("Gradient_uba4e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2aj7"]
 size = Vector2(6070, 51.5)
@@ -41,16 +36,13 @@ position = Vector2(4047, 69)
 shape = SubResource("RectangleShape2D_tapc3")
 
 [node name="Camera2D" type="Camera2D" parent="Environment"]
-offset = Vector2(120, -120)
+offset = Vector2(220, -120)
 limit_left = -120
 limit_top = 120
 limit_bottom = 230
 
 [node name="Start" type="Node2D" parent="Environment"]
 position = Vector2(-373.208, 277.662)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Start"]
-texture = SubResource("GradientTexture2D_me7yu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
 
