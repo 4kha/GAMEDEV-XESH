@@ -48,7 +48,7 @@ position = Vector2(-373.208, 277.662)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(10, 70)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00101" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
 position = Vector2(456, 182.5)
@@ -62,17 +62,33 @@ texture = ExtResource("2_vxlym")
 position = Vector2(456, 182.5)
 texture = ExtResource("3_v738g")
 
+[node name="Layer00102" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1384, 182.5)
+texture = ExtResource("1_qanpk")
+
+[node name="Layer00111" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1384, 182.5)
+texture = ExtResource("2_vxlym")
+
+[node name="Layer00093" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1384, 182.5)
+texture = ExtResource("3_v738g")
+
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(10, 70)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00064" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer4"]
 position = Vector2(456, 182.5)
 texture = ExtResource("7_0bc58")
 
+[node name="Layer00065" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1384, 182.5)
+texture = ExtResource("7_0bc58")
+
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(466, 252.5)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00083" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer5"]
 texture = ExtResource("8_2ruv4")
@@ -80,9 +96,17 @@ texture = ExtResource("8_2ruv4")
 [node name="Layer00065" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer5"]
 texture = ExtResource("7_0bc58")
 
+[node name="Layer00084" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer5"]
+position = Vector2(928, 0)
+texture = ExtResource("8_2ruv4")
+
+[node name="Layer00066" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer5"]
+position = Vector2(928, 0)
+texture = ExtResource("7_0bc58")
+
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(466, 252.5)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00055" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
 texture = ExtResource("9_ixn31")
@@ -97,9 +121,25 @@ texture = ExtResource("10_726wo")
 position = Vector2(0, -211.5)
 texture = ExtResource("10_726wo")
 
+[node name="Layer00056" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
+position = Vector2(928, 0)
+texture = ExtResource("9_ixn31")
+
+[node name="Layer00019" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
+position = Vector2(928, 0)
+texture = ExtResource("6_rhnhv")
+
+[node name="Layer00029" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
+position = Vector2(928, 0)
+texture = ExtResource("10_726wo")
+
+[node name="Layer00030" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer6"]
+position = Vector2(928, -211.5)
+texture = ExtResource("10_726wo")
+
 [node name="ParallaxLayerLight" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(10, 70)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer0007Lights" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayerLight"]
 position = Vector2(456, 182.5)
@@ -107,12 +147,20 @@ texture = ExtResource("4_t5x4e")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
 position = Vector2(466, 252.5)
-motion_mirroring = Vector2(928, 0)
+motion_mirroring = Vector2(1856, 0)
 
 [node name="Front" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("6_rhnhv")
 
 [node name="Layer00010" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("5_fb57c")
+
+[node name="Front2" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
+position = Vector2(928, 0)
+texture = ExtResource("6_rhnhv")
+
+[node name="Layer00011" type="Sprite2D" parent="Environment/ParallaxBackground/ParallaxLayer"]
+position = Vector2(928, 0)
 texture = ExtResource("5_fb57c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment"]
