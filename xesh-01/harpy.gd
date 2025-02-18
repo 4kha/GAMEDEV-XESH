@@ -1,13 +1,14 @@
 extends CharacterBody2D
 @onready var DashSFX = preload("res://dash_sfx.tscn")
 
-const GRAVITY = 0.8
-const SPEED = 5.0
-const FIRST_JUMP = 18.0
-const DOUBLE_JUMP = 17.0
-const MAXFALLSPEED = 30
-const GLIDINGSPEED = 2
-const DASHSPEED = 20
+const SCALING = 1
+const GRAVITY = 0.8 * SCALING
+const SPEED = 5.0 * SCALING
+const FIRST_JUMP = 18.0 * SCALING
+const DOUBLE_JUMP = 17.0 * SCALING
+const MAXFALLSPEED = 30 * SCALING
+const GLIDINGSPEED = 2 * SCALING
+const DASHSPEED = 20 * SCALING
 
 var move = Vector2(0, 0)
 var dashmath = Vector2(0, 0)
