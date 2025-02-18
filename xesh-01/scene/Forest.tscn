@@ -17,7 +17,7 @@
 size = Vector2(9020, 649)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2aj7"]
-size = Vector2(6070, 51.5)
+size = Vector2(928, 147.5)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(466, 252.5)
@@ -43,6 +43,12 @@ limit_bottom = 230
 
 [node name="Start" type="Node2D" parent="Environment"]
 position = Vector2(-373.208, 277.662)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment"]
+
+[node name="GroundCollisionShape" type="CollisionShape2D" parent="Environment/StaticBody2D"]
+position = Vector2(0, 403.75)
+shape = SubResource("RectangleShape2D_d2aj7")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Environment"]
 
@@ -163,8 +169,5 @@ texture = ExtResource("6_rhnhv")
 position = Vector2(928, 0)
 texture = ExtResource("5_fb57c")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment"]
-
-[node name="GroundCollisionShape" type="CollisionShape2D" parent="Environment/StaticBody2D"]
-position = Vector2(2563, 355.75)
-shape = SubResource("RectangleShape2D_d2aj7")
+[node name="ParallaxLayerCollision" type="ParallaxLayer" parent="Environment/ParallaxBackground"]
+motion_mirroring = Vector2(1856, 0)
