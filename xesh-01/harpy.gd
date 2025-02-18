@@ -10,6 +10,7 @@ const GLIDINGSPEED = 2
 const DASHSPEED = 20
 
 var move = Vector2(0, 0)
+var dashmath = Vector2(0, 0)
 var fallspeed = MAXFALLSPEED
 var doublejump = 0
 var onfloor = 0
@@ -56,20 +57,21 @@ func _physics_process(_delta):
 		get_parent().add_child(Sfx)
 
 	if Input.is_action_just_pressed("dash") && dash != 0 && dashing == 0:
-		dash = 0
-		dashing = 1
-		move.x = 0
-		move.y = 0
+		dashmath.x = 0
+		dashmath.y = 0
 		$DashTimer.start()
 		if Input.is_action_pressed("move_right"):
-			move.x = 1
+			dashmath.x += 1
 		if Input.is_action_pressed("move_down"):
-			move.y = 1
+			dashmath.y += 1
 		if Input.is_action_pressed("move_up"):
-			move.y = -1
+			dashmath.y += -1
 		if Input.is_action_pressed("move_left"):
-			move.x = -1
-		move = move.normalized() * DASHSPEED
+			dashmath.x += -1
+		if dashmath != Vector2(0, 0):
+			dash = 0
+			dashing = 1
+			move = dashmath.normalized() * DASHSPEED
 
 	position += move
 	move_and_slide()
