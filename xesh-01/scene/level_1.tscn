@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce2j1dqmnrntn"]
+[gd_scene load_steps=6 format=4 uid="uid://2x6jtw43ksrg"]
 
 [ext_resource type="Texture2D" uid="uid://pjuj01p5ehey" path="res://art/Environment/Tiles/Assets/Assets.png" id="1_y33bw"]
 [ext_resource type="Texture2D" uid="uid://h1j484aqdoiu" path="res://art/Environment/Tiles/Assets/Background_2.png" id="2_35qxn"]
@@ -10,10 +10,15 @@ texture = ExtResource("1_y33bw")
 3:0/0 = 0
 4:0/0 = 0
 7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 7, -2.625, 4.5, 0.375, 3.25, 4.375, 1.5, 8, 0.25, 8, 8)
 8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 0, -3.375, -3, 0.375, -6.25, 4.625, -8, 8, -8, 8, 8)
 9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.875, -5.5, 3.625, -2.5, 8, 0.5, 8, 8, -8, 8)
 11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, -1.875, 2.5, 1.875, 3.75, 5.625, 6, 8, 8, -8, 8)
 13:0/0 = 0
 14:0/0 = 0
 15:0/0 = 0
@@ -345,12 +350,10 @@ texture = ExtResource("1_y33bw")
 24:24/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_d0nwt"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wymik")
 
 [node name="Level1" type="Node2D"]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_d0nwt")
 
 [node name="SkyBackground" type="Node2D" parent="."]
 
@@ -359,3 +362,7 @@ texture = ExtResource("2_35qxn")
 
 [node name="Cloud" type="Sprite2D" parent="SkyBackground"]
 texture = ExtResource("3_p8j6l")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAP//AAAHAAAAAAACAP//AAAIAAAAAAADAP//AAAJAAAAAAAEAP//AAAKAAAAAAAFAP//AAALAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAHAAEAAAACAAAAAAAIAAEAAAADAAAAAAAJAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAALAAEAAAAAAAEAAAAGAAIAAAA=")
+tile_set = SubResource("TileSet_d0nwt")
