@@ -376,29 +376,39 @@ size = Vector2(3490.5, 81)
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_it773")
 
-[node name="SkyBackground" type="Node2D" parent="."]
-z_index = -2
-scale = Vector2(7, 7)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(1.1, 1.1)
+transform = Transform2D(1.1, 0, 0, 1.1, 0, 0)
 
-[node name="BlueSky" type="Sprite2D" parent="SkyBackground"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-484.545, 57.2727)
+motion_scale = Vector2(1, 0)
+
+[node name="BlueSky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(7, 7)
 texture = ExtResource("2_35qxn")
 
-[node name="Cloud" type="Sprite2D" parent="SkyBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-484.545, 57.2727)
+motion_scale = Vector2(1.1, 0.1)
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(7, 7)
 texture = ExtResource("3_p8j6l")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(7, 7)
-tile_map_data = PackedByteArray("AADx/wYAAAADAAAAAADy/wYAAAADAAAAAADz/wYAAAADAAAAAAD0/wYAAAADAAAAAADw/wYAAAABAAEAAAD1/wYAAAAEAAAAAADx/wcAAAACAAIAAADy/wcAAAADAAEAAADz/wcAAAAEAAIAAAD0/wcAAAAEAAIAAADw/wcAAAABAAIAAAD1/wcAAAAFAAIAAADx/wgAAAACAAIAAADy/wgAAAADAAIAAADz/wgAAAAEAAIAAAD0/wgAAAAEAAMAAADw/wgAAAABAAIAAAD1/wgAAAAFAAIAAAD1/wkAAAAEAAQAAADx/wkAAAADAAQAAADy/wkAAAADAAQAAADz/wkAAAADAAQAAAD0/wkAAAADAAQAAADw/wkAAAACAAQAAADz/wUAAAANAAEAAAD0/wUAAAAOAAEAAAD1/wUAAAAPAAEAAADx/wUAAAANAAAAAADy/wUAAAAPAAAAAAD5/wQAAAAOAAMAAAD6/wQAAAAPAAMAAAD7/wQAAAAPAAMAAAD8/wQAAAAPAAMAAAD9/wQAAAAQAAMAAAA=")
+tile_map_data = PackedByteArray("AADx/wYAAAADAAAAAADy/wYAAAADAAAAAADz/wYAAAADAAAAAAD0/wYAAAADAAAAAADw/wYAAAABAAEAAAD1/wYAAAAEAAAAAADx/wcAAAACAAIAAADy/wcAAAADAAEAAADz/wcAAAAEAAIAAAD0/wcAAAAEAAIAAADw/wcAAAABAAIAAAD1/wcAAAAFAAIAAADx/wgAAAACAAIAAADy/wgAAAADAAIAAADz/wgAAAAEAAIAAAD0/wgAAAAEAAMAAADw/wgAAAABAAIAAAD1/wgAAAAFAAIAAAD1/wkAAAAEAAQAAADx/wkAAAADAAQAAADy/wkAAAADAAQAAADz/wkAAAADAAQAAAD0/wkAAAADAAQAAADw/wkAAAACAAQAAADz/wUAAAANAAEAAAD0/wUAAAAOAAEAAAD1/wUAAAAPAAEAAADx/wUAAAANAAAAAADy/wUAAAAPAAAAAAD5/wQAAAAOAAMAAAD6/wQAAAAPAAMAAAD7/wQAAAAPAAMAAAD8/wQAAAAPAAMAAAD9/wQAAAAQAAMAAAAAAAIAAAAGAAEAAAABAAEAAAAHAAAAAAABAAIAAAAHAAEAAAACAAEAAAAIAAAAAAACAAIAAAAIAAEAAAADAAEAAAAJAAAAAAADAAIAAAAJAAEAAAAEAAEAAAAKAAAAAAAEAAIAAAAKAAEAAAAFAAEAAAALAAAAAAAFAAIAAAALAAEAAAAGAAIAAAAMAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAADAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAAAAMAAAAGAAIAAAAGAAMAAAAMAAIAAAADAAAAAAAPAAAAAAAAAAQAAAABAAIAAAAGAAQAAAAFAAMAAAAFAAQAAAADAAQAAAAEAAQAAAAEAAIAAAADAAUAAAADAAMAAAAEAAUAAAAFAAMAAAABAAUAAAACAAMAAAACAAUAAAACAAMAAAADAAQAAAADAAIAAAACAAQAAAADAAIAAAABAAQAAAACAAIAAAAAAAUAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_d0nwt")
 
 [node name="Harpy" parent="." instance=ExtResource("4_oj3am")]
-physics_interpolation_mode = 1
-position = Vector2(-1582.24, 474.153)
-floor_constant_speed = true
-floor_snap_length = 9.5
-safe_margin = 87.023
+position = Vector2(-1726.9, 444.952)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-607.063, 192.869)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

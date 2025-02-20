@@ -938,13 +938,17 @@ animations = [{
 radius = 60.0
 height = 206.0
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Node2D2" type="CharacterBody2D"]
+physics_interpolation_mode = 1
+floor_constant_speed = true
+floor_max_angle = 1.91114
+floor_snap_length = 10.0
 script = ExtResource("1_eas4b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -9)
 sprite_frames = SubResource("SpriteFrames_ad1it")
-animation = &"Idle"
+animation = &"Fall"
 
 [node name="Idle" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
