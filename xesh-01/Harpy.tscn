@@ -946,9 +946,10 @@ floor_snap_length = 10.0
 script = ExtResource("1_eas4b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-3, -9)
 sprite_frames = SubResource("SpriteFrames_ad1it")
-animation = &"Fall"
+animation = &"Idle"
 
 [node name="Idle" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
