@@ -28,7 +28,10 @@ func _physics_process(_delta):
 		doublejump = 1
 		dash = 1
 	if dashing == 0:
-		move.y += GRAVITY 
+		if !onfloor:
+			move.y += GRAVITY 
+		else:
+			move.y = 0
 		move.x = 0
 		if Input.is_action_pressed("jump") && !onfloor:
 			fallspeed = GLIDINGSPEED
@@ -73,18 +76,22 @@ func _physics_process(_delta):
 			dash = 0
 			dashing = 1
 			move = dashmath.normalized() * DASHSPEED
+			move.y /= 2
 
 	position += move
 	move_and_slide()
 	if (move.y < 0) || !onfloor:
+		$Idle.disabled = 1
 		if (move.y > 10):
 			$AnimatedSprite2D.animation = "Fall"
 		else:
 			$AnimatedSprite2D.animation = "Fly"
 	elif move.x != 0:
+		$Idle.disabled = 1
 		$AnimatedSprite2D.animation = "Walk"
 	else:
 		$AnimatedSprite2D.animation = "Idle"
+		$Idle.disabled = 0
 
 func _on_dash_timer_timeout():
 	dashing = 0
