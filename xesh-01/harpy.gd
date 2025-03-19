@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var DashSFX = preload("res://dash_sfx.tscn")
 
-const SCALING = 1
+const SCALING = 1.5
 const GRAVITY = 0.8 * SCALING
 const SPEED = 5.0 * SCALING
 const FIRST_JUMP = 18.0 * SCALING
